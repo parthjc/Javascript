@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  <form  name="f">
+
+    <table>
+        <td>Enter Value For A</td>
+        <tr><td><input type="text" name="no1"></td></tr>
+        <td>Enter Value For B</td>
+        <tr><td><input type="text" name="no2"></td></tr>
+        <tr><td><input type="button" value="addition" onclick="add()"></td></tr>
+    
+    </table>
+  </form>
+   <p id="ans"></p>
+   <p id="loop"></p>
+</body>
+
+<script>
+     let sum = 0;
+    for (let index = 0; index <= 10; index++) {
+        
+        //console.log(index)
+
+        //document.getElementById("ans").innerHTML = sum
+        sum =  sum + index +"<br>"
+            
+        
+    }
+    
+    document.getElementById("loop").innerHTML=sum
+
+    function add(){
+        let a = parseInt(document.f.no1.value)
+        let b = parseInt(document.f.no2.value)
+        
+        console.log("a: " + a)
+        console.log("b: " + b)
+        
+        c = a + b
+        d = a - b
+
+        console.log(c)
+        console.log(d)
+        
+        // document.write(c)
+        
+        document.getElementById("ans").innerHTML= "addition= " +c+ "<br>" +"subtraction= "+d
+
+        // let x = document.getElementById("ans")
+        
+        // x.innerHTML = c
+
+        
+    
+    }
+</script>
+
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <form name="f">
+    <table>
+      <tr>
+        <td>
+          <input type="checkbox" name="c" value="a">ADDITION
+          <input type="checkbox" name="c" value="s">SUBTRACTION
+          <input type="checkbox" name="c" value="m">MULTIPLICATION
+          <input type="checkbox" name="c" value="d">DIVISION
+        </td>
+      </tr>
+      <td>NO1</td>
+      <tr>
+        <td>
+          <input type="text" name="n1">
+        </td>
+      </tr>
+      <td>NO2</td>
+      <tr>
+        <td>
+          <input type="text" name="n2">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="CALCULATE" onclick="calc()">
+        </td>
+      </tr>
+    </table>
+  </form>
+  <p id="p"></p>
+</body>
+
+  <script>
+
+    function calc(){
+
+      let val = ''
+      let cb = document.f 
+      let msg = ''
+
+     for (let i=0; i<cb.c.length; i++) {
+      
+      
+      if(document.f.c[i].checked)  {
+
+        val = document.f.c[i].value
+
+        if (val == 'a') {
+          no1 = parseInt(document.f.n1.value)
+          no2 = parseInt(document.f.n2.value)
+          add = no1+no2
+          msg = msg + "<font size=5 color=red>ADDITION:- </font>" + "<font size=5 >"+add+"</font><br>" 
+          document.getElementById('p').innerHTML = msg
+        }
+        
+        if (val == 's') {
+          no1 = parseInt(document.f.n1.value)
+          no2 = parseInt(document.f.n2.value)
+          sub = no1-no2
+          msg = msg + "<font size=5 color=blue>SUBTRACTION:- </font>" + "<font size=5 >"+sub+"</font><br>" 
+          document.getElementById('p').innerHTML = msg 
+        }
+        
+        if (val == 'm') {
+          no1 = parseInt(document.f.n1.value)
+          no2 = parseInt(document.f.n2.value)
+          mul = no1*no2
+          msg = msg + "<font size=5 color=green>MULTIPLICATION:- </font>" + "<font size=5 >"+mul+"</font><br>" 
+          document.getElementById('p').innerHTML = msg         
+        }
+        
+        if (val == 'd') {
+          no1 = parseInt(document.f.n1.value)
+          no2 = parseInt(document.f.n2.value)
+          div = no1/no2
+          msg = msg + "<font size=5 color=orange>DIVISION:- </font>" + "<font size=5 >"+div+"</font><br>" 
+          document.getElementById('p').innerHTML = msg         
+        }
+        
+     }
+    
+    }
+
+  }
+
+  </script>
+
+</html>

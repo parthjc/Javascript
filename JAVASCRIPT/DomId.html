@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dom id</title>
+    
+</head>
+<!-- 
+    innerHtml
+    innerText
+    textContent
+ -->
+<body>
+    <!-- onclick : function call -->
+
+
+
+    <div id="p11">
+        Hello Namra and                   Spidy 
+        <b>Hello Class</b>
+    </div>
+    <input type="button" onclick="print()" value="Click Here..">
+    <script>
+        document.getElementsByName
+        document.getElementById
+        function print(){
+            let a = document.getElementById("p11"); 
+            console.log(a.innerHTML); // all content includes space and other html elements/tags
+            console.log(a.innerText); // all contents but no space no another html element/tags
+            console.log(a.textContent);// all contents include space but no html tags / elements
+        }
+    </script>
+</body>
+</html>
+<!-- Dom tree 
+
+elements [tag]
+        html 
+head            body
+ title              p 
+                        <font></font>
+                        <blockquote></blockquote> -->

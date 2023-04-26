@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<form name="f">
+  <tr>
+    <td>Calculation</td>
+    <td><select name="se" id="">
+
+      <option value="0">---- Select ----</option>
+      <option value="1">ADDITION</option>
+      <option value="2">SUBTRACTION</option>
+      <option value="3">MULTIPLICATION</option>
+      <option value="4">DIVISION</option>
+
+    </select></td>
+     <br>
+     <br>
+    <tr>
+      <td>enter value for a</td>
+      <td><input type="text" name="a"></td>
+  </tr>
+  <br>
+  <br>
+  <tr>
+      <td>enter value for b</td>
+      <td><input type="text" name="b"></td>
+</tr>
+
+  </tr>
+  <br>
+  <br>
+  <br>
+  <tr>
+    <td><input type="button"  value="Submit" onclick="calc()"></td>
+  </tr>
+</form>
+<p id="p"></p>
+</body>
+
+<script>
+
+  function calc(){
+
+      val = document.f.se.value
+       a  = parseInt(document.f.a.value)  
+       b  = parseInt(document.f.b.value)  
+
+      if(val == 1){
+
+        c = a+b
+        document.getElementById('p').innerHTML = "ADDITION = " + c
+
+      }
+      if(val == 2){
+
+        d = a-b
+        document.getElementById('p').innerHTML = "SUBTRACTION = " + d
+
+      }
+      if(val == 3){
+
+        e = a*b
+        document.getElementById('p').innerHTML = "MULTIPLICATION = " + e
+
+      }
+      if(val == 4){
+
+        f = a/b
+        document.getElementById('p').innerHTML = "DIVISION = " + f
+
+      }
+
+
+
+  }
+
+
+</script>
+
+</html>

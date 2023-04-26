@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+</head>
+
+<style>
+form {
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+.btn {
+    margin: 10px;
+    margin-left: 37px;
+    padding: 6px;
+}
+.p{
+
+    border: solid blue;  
+    margin: 10px;;
+    margin-left: 450px;
+    padding: 5px;
+    margin-right: 450px;
+    
+
+}
+
+
+
+</style>
+
+<body>
+    
+    <form name="f">
+
+        <table align="center">
+            <td>ENTER FIRST NUMBER </td>
+            <tr>
+                <td><input type="text" name="no1" class="no1" size="30px"></td>
+            </tr>
+            
+            <td>ENTER SECOND NUMBER</td>
+            <tr>
+                <td><input type="text" name="no2" class="no2" size="30px"></td>
+            </tr>
+             
+            <tr>
+                
+            </tr>
+            <tr>
+            <td style="padding: 3px;"><input type="radio" name="rd" sty value="add">ADDITION</td>
+            </tr>
+            <tr>
+            <td style="padding: 3px;"><input type="radio" name="rd" sty value="sub">SUBTRACTION</td>
+            </tr>
+            <tr> 
+            <td style="padding: 3px;"><input type="radio" name="rd" sty value="div">DIVISION</td>
+            </tr>
+            <tr>
+            <td style="padding: 3px;"><input type="radio" name="rd" sty value="mul">MULTIPLICATION</td>
+            </tr> 
+            <tr> 
+            <td style="padding: 3px;"><input type="radio" name="rd" sty value="mod">MODULO</td>
+            </tr>
+            
+
+            <tr>
+                <td><input type="button" value="SUBMIT" onclick="fun()" class="btn"></td>
+            </tr>
+
+        </table>
+
+        <p  align="center" id="p" class="p">----</p>
+
+    </form>
+
+    <script>
+
+        function fun(){
+
+          let no1 =  parseInt (document.f.no1.value);
+          let no2 =  parseInt (document.f.no2.value);
+          let addans= no1 + no2;
+          let subans= no1 - no2;
+          let divans= no1 / no2;
+          let mulans= no1 * no2;
+          let modans= no1 % no2;
+          
+          
+          let add =  document.f.rd.value  
+         
+
+
+          if(add == "add"){
+
+            document.getElementById('p').innerHTML = "  Addition = " + "<font color=red size=5px>" +addans+ "</font>"
+
+          }
+
+          if(add == "sub"){
+
+            document.getElementById('p').innerHTML = "  subtraction = " + "<font color=red size=5px>" +subans+ "</font>"
+
+          }
+
+          if(add == "div"){
+
+            document.getElementById('p').innerHTML = "  division = " + "<font color=red size=5px>" +divans+ "</font>"
+
+          }
+
+          if(add == "mul"){
+
+            document.getElementById('p').innerHTML = "  multiplication = " + "<font color=red size=5px>" +mulans+ "</font>"
+
+          }
+
+          if(add == "mod"){
+
+            document.getElementById('p').innerHTML = "  mod = " + "<font color=red size=5px>" +modans+ "</font>"
+
+          }
+          
+
+        }
+
+    </script>
+
+</body>
+</html>

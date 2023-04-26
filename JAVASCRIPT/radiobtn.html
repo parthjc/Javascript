@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+.btn{
+
+    margin: 20px;
+    padding: 5px;
+    margin-left: 15px;
+}
+
+p{
+
+    
+    margin-left: 450px;
+    font-size: 30px;
+}
+
+</style>
+<body>
+    
+    <form name="f">
+
+        <table align="center" >
+            <tr>
+                <td><input type="radio" name="rd" value="v1">RED</td>
+            </tr>
+        
+            <tr>
+                <td><input type="radio" name="rd" value="v2">BLUE</td>
+            </tr>
+        
+            <tr>
+                <td><input type="radio" name="rd" value="v3">GREEN</td>
+            </tr>
+        
+            <tr>
+                <td><input type="radio" name="rd" value="v4">YELLOW</td>
+            </tr>
+        
+            <tr>
+                <td><input type="radio" name="rd" value="v5">ORANGE</td>
+            </tr>
+        
+            <tr>
+                <td><input type="button"  class="btn" value="SUBMIT" onclick="fun()"></td>
+            </tr>
+        
+        
+        </table>
+
+
+        
+        
+
+    </form>
+
+    <p id="p"></p>
+</body>
+
+<script>
+
+    function fun(){
+
+       let red = document.f.rd.value
+
+       console.log(red)
+
+       if (red == 'v1') {
+        
+        document.getElementById('p').innerHTML = " YOU HAVE CHOOSEN <font color=red> RED </font> COLOR" ;
+
+       }
+       if (red == 'v2') {
+        
+        document.getElementById('p').innerHTML = " YOU HAVE CHOOSEN <font color=blue> BLUE </font> COLOR" ;
+
+       }
+       if (red == 'v3') {
+        
+        document.getElementById('p').innerHTML = " YOU HAVE CHOOSEN <font color=green> GREEN </font> COLOR" ;
+
+       }
+       if (red == 'v4') {
+        
+        document.getElementById('p').innerHTML = " YOU HAVE CHOOSEN <font color=yellow> YELLOW </font> COLOR" ;
+
+       }
+       if (red == 'v5') {
+        
+        document.getElementById('p').innerHTML = " YOU HAVE CHOOSEN <font color=orange> ORANGE </font> COLOR" ;
+
+       }
+
+
+
+    }
+
+
+
+</script>
+
+
+</html>

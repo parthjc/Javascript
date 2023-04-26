@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form name="f" >
+        <table>
+            <td>First Name</td>
+            <tr>
+                <td><input type="text" name="fname"></td>
+            </tr>
+            <td>Last Name</td>
+            <tr>
+                <td><input type="text" name="lname"></td>
+            </tr>
+            <td>Email</td>
+            <tr>
+                <td><input type="email" name="email" ></td>
+            </tr>
+            <td>Contact No</td>
+            <tr>
+                <td><input type="tel" name="phone" ></td>
+            </tr>
+            <td>City</td>
+            <tr>
+                <td><input type="text" name="city"></td>
+            </tr>
+            <td>Country Name</td>
+            <tr>
+                <td><input type="text" name="cname"></td>
+            </tr>
+            <td>University Name </td>
+            <tr>
+                <td><input type="text" name="uname"></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="button" value="submit" onclick="data()"></td>
+            </tr>
+        </table>
+    </form>
+    <p id="data">-----------</p>
+
+</body>
+
+
+<script>
+
+    function data(){
+        let fname = (document.f.fname.value) 
+        let lname = (document.f.lname.value) 
+        let email = (document.f.email.value) 
+        let phone = (document.f.phone.value) 
+        let city = (document.f.city.value) 
+        let cname = (document.f.cname.value) 
+        let uname = (document.f.uname.value) 
+
+        document.getElementById('data').innerHTML =  "<font size=5 color=red> First Name =  "+ fname + "<br>" + "Last Name = "+ lname + "<br>" +"Email = "+ email + "<br>" +"Contact No = "+ phone + "<br>" +"City = "+ city + "<br>" +"Country Name = "+ cname + "<br>" +"University Name = "+ uname  + "</font>"
+        
+
+    }
+
+</script>
+
+
+</html>
+
