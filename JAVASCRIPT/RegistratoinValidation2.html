@@ -1,0 +1,153 @@
+<html>
+<head>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form name="f">
+
+        <table align="center">
+            <tr>
+                <td><label for="fname"> First Name</label></td>
+                <td><input type="text" name="fname" id="fname">
+                    <!-- <div>First Name </div> -->
+                    <span id="errFn"></span>
+                    </td>
+            </tr>
+            <tr>
+                <td><label>Last Name</label></td>
+                <td><input type="text" name="lname">
+                    <span id="errLn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="g" value="m"> Male
+                    <input type="radio" name="g" value="f">Female
+                    <span id="errGen"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Contact No</td>
+                <td><input type="text" name="cn">
+                <span id="errCn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobies</td>
+                <td><input type="checkbox" name="sports" value="sports"> sports
+                    <input type="checkbox" name="music" value="music">music
+                    <input type="checkbox" name="drawing" value="drawing">Drawing
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email id</td>
+                <td><input type="email" name="em">
+                <span id="errEm"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="pwd">
+                <span id="errPwd"></span> </td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td><select>
+                        <option value="0">---Select---</option>
+                        <option value="1">India</option>
+                        <option value="2">Nepal</option>
+                        <option value="3">Bhutan</option>
+                        <option value="4">Pakistan</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>
+                    Address
+                </td>
+                <td>
+                    <textarea name="add" id="" cols="15" rows="4"></textarea>
+                    <span id="errAdd"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"> <input type="button" value="Register"
+                        onclick="validate()">&nbsp;&nbsp;&nbsp;<input type="reset"></td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+<script>
+    function validate(){
+        let fn = document.f.fname.value
+        let ln = document.f.lname.value
+        let cn = document.f.cn.value
+        let em = document.f.em.value
+        let pwd = document.f.pwd.value
+        let add = document.f.add.value
+        console.log("---->"+fn)
+        let err = ""
+        let isErr = false
+        
+        if(fn=="" || fn.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errFn').innerHTML = "<font color='red'> * First Name is Required </font>"
+        }
+
+        if(ln == "" || ln.trim().length == 0){
+            // alert("Last name is Required")
+            // isErr = true
+            // err = err + "Last Name is Required.\n"
+            document.getElementById('errLn').innerHTML = " * Last Name is Required"
+        }
+
+        if(cn == "" || cn.trim().length == 0){
+            document.getElementById('errCn').innerHTML = " * Contact no is Required"
+        }
+        if(em == "" || em.trim().length == 0){
+            document.getElementById('errEm').innerHTML = " * Email is Required"
+        }
+        if(pwd == "" || pwd.trim().length == 0){
+            document.getElementById('errPwd').innerHTML = " * Password is Required"
+        }
+        if(add == "" || add.trim().length == 0){
+            document.getElementById('errAdd').innerHTML = " * Address is Required"
+        }
+
+        let gen = document.f
+        let cnt = 0
+        for(let i=0;i<document.f.g.length;i++){
+            if(gen.g[i].checked){
+                cnt++
+            }
+        }
+        if(cnt == 0){
+            document.getElementById('errGen').innerHTML = " * Gender is Required"
+        }
+        // if(isErr){
+        //     alert(err)
+        // }
+    }
+</script>
+</html>
+<!-- 
+
+    why validation ?
+    empty: required  
+    yash : fname : text : no number no spe symbol no singl word : om
+    no 
+     data  : store database : name : meet 15000000000 
+     validation 
+     co no  : digits 10 
+     pwd cpwd: same 8 32 64 ....
+
+ -->

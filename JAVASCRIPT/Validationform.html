@@ -1,0 +1,95 @@
+<html>
+
+<body>
+    <form name="f">
+
+        <table align="center">
+            <tr>
+                <td><label for="fname"> First Name</label></td>
+                <td><input type="text" name="fname" id="fname"></td>
+            </tr>
+            <tr>
+                <td><label>Last Name</label></td>
+                <td><input type="text" name="lname"></td>
+            </tr>
+    
+            <tr>
+                <td>Contact No</td>
+                <td><input type="tel" name="contactNo"></td>
+            </tr>
+
+            <tr>
+                <td>Email id</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password"  name="password"></td>
+            </tr>
+        
+            <tr>
+                <td>
+                    Address
+                </td>
+                <td>
+                    <textarea name="address" id="" cols="15" rows="4"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"> <input type="button" value="Register"
+                        onclick="validate()">&nbsp;&nbsp;&nbsp;<input type="reset"></td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+<script>
+    function validate(){
+      let ln = document.f.lname.value
+      let fn = document.f.fname.value
+      let cn = document.f.contactNo.value
+      let em = document.f.email.value
+      let ps = document.f.password.value
+      let ad = document.f.address.value
+      console.log("---->"+fn)
+      let err = ""
+        let isErr = false
+        
+        if(fn=="" || fn.trim().length == 0){
+            // alert("First name is Required")
+            isErr = true
+            err = err + "First Name is Required.\n"
+        }
+
+        if(ln == "" || ln.trim().length == 0){
+            // alert("Last name is Required")
+            isErr = true
+            err = err + "Last Name is Required.\n"
+        }
+        if(cn == "" || cn.trim().length == 0){
+            // alert("Last name is Required")
+            isErr = true
+            err = err + "Contact No is Required.\n"
+        }
+        if(em == "" || em.trim().length == 0){
+            // alert("Last name is Required")
+            isErr = true
+            err = err + "Email id is Required.\n"
+        }
+        if(ps == "" || ps.trim().length == 0){
+            // alert("Last name is Required")
+            isErr = true
+            err = err + "Password is Required.\n"
+        }
+        if(ad == "" || ad.trim().length == 0){
+            // alert("Last name is Required")
+            isErr = true
+            err = err + "Address is Required.\n"
+        }
+
+        if(isErr){
+            alert(err)
+        }
+    }
+</script>
+</html>
