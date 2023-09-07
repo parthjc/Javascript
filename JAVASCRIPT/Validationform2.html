@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    span{
+        color: red;
+    }
+
+</style>
+
+</head>
+<body>
+    <form name="f">
+        <table align="center">
+            <tr>
+                <td>FirstName</td>
+                <td><input type="text" name="fname">
+                <span id="errfn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>LastName</td>
+                <td><input type="text" name="lname">
+                <span id="errln"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="g" value="m">Male
+                    <input type="radio" name="g" value="f">Female
+                    <span id="errg"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Contact No</td>
+                <td><input type="text" name="cn">
+                <span id="errcn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobbies</td>
+                <td>
+                    <input type="checkbox" name="h" value="mc">Music
+                    <input type="checkbox" name="h" value="sp">Sports
+                    <input type="checkbox" name="h" value="rd">Reading
+                    <input type="checkbox" name="h" value="hk">Hiking
+                    <span id="errh"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email Id</td>
+                <td><input type="email" name="email">
+                <span id="errem"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password">
+                <span id="errpass"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td><select name="s">
+                    <option value="0">---Select---</option>
+                    <option value="1">India</option>
+                    <option value="2">Russia</option>
+                    <option value="3">Japan</option>
+                    <option value="4">South Korea</option>
+                    <option value="5">Iceland</option>
+                    <option value="6">Norway</option>
+                    <option value="7">Switzerland</option>
+                    </select>
+                    <span id="errctry"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea name="add" cols="21" rows="6"></textarea> 
+                <span id="erradd"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Submit" onclick="validate()">
+                    &nbsp;&nbsp;&nbsp;<input type="reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+
+    function validate(){
+        let fname = document.f.fname.value
+        let lname = document.f.lname.value
+        let gnder = document.f
+        let cntno = document.f.cn.value
+        let hobie = document.f
+        let email = document.f.email.value
+        let passw = document.f.password.value
+        let cntry = document.f.s.value
+        let addrs = document.f.add.value
+        let checktruegn = 0
+        let checktruehb = 0
+        let istrue = false
+        let iserror = ''
+
+        if(fname == '' || fname.trim().length == 0){
+            // istrue = true
+            // iserror = iserror + "First Name is Required\n"
+            document.getElementById('errfn').innerHTML = " * First Name is Required"
+        }
+        if(lname == '' || lname.trim().length == 0){
+            // istrue = true
+            // iserror = iserror + "Last Name is Required\n"
+            document.getElementById('errln').innerHTML = " * Last Name is Required"
+
+        }
+
+        for(let i=0; i<document.f.g.length; i++){
+            if(gnder.g[i].checked){
+                checktruegn++
+            }
+        }
+        if(checktruegn == 0){
+            document.getElementById('errg').innerHTML = " * Gender is Required"
+        }
+        if(cntno == '' || cntno.trim().length == 0){
+            // istrue = true
+            // iserror = iserror + "Contact No is Required\n"
+            document.getElementById('errcn').innerHTML = " * Contact No is Required"
+        }
+        for(let i=0; i<document.f.h.length; i++){
+            if(hobie.h[i].checked){
+                checktruehb++
+            }
+        }
+        if(checktruehb == 0){
+            document.getElementById('errh').innerHTML = " * Hobbies is Required"
+        }
+        if(email == '' || email.trim().length == 0){
+            // istrue = true
+            // iserror = iserror + "Email Id is Required\n"
+            document.getElementById('errem').innerHTML = " * Email Id is Required"
+        }
+        if(passw == '' || passw.trim().length == 0){
+            // istrue = true
+            // iserror = iserror + "Password is Required\n"
+            document.getElementById('errpass').innerHTML = " * Password is Required"
+        }
+
+        if(cntry != '0'){
+            document.getElementById('errctry').innerHTML = " "
+
+        }else if(cntry == '0')
+            document.getElementById('errctry').innerHTML = " * Country is Required"
+
+        if(addrs == '' || lname.trim().length == 0){
+            // istrue = true
+            // iserror = iserror + "Address is Required\n"
+            document.getElementById('erradd').innerHTML = " * Address is Required"
+        }
+
+        // if(istrue){
+        //     alert(iserror)
+        // }
+
+    }
+    
+
+</script>
+</html>

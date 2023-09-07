@@ -1,0 +1,322 @@
+<html>
+
+<head>
+    <style>
+        span {
+            color: red;
+        }
+
+        p {
+            text-align: center;
+            border: 2px solid rebeccapurple;
+            width: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            font-size: 22px;
+            color: gold;
+            background-color: cadetblue;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form name="f">
+
+        <table align="center">
+            <tr>
+                <td><label for="fname"> First Name</label></td>
+                <td><input type="text" name="fname" id="fname" onkeypress="validateFn()">
+                    <!-- <div>First Name </div> -->
+                    <span id="errFn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Last Name</label></td>
+                <td><input type="text" name="lname" onfocus="validateLn()">
+                    <span id="errLn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="g" value="m"> Male
+                    <input type="radio" name="g" value="f">Female
+                    <span id="errGen"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Contact No</td>
+                <td><input type="text" name="cn" onblur="validateCn()">
+                    <span id="errCn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobies</td>
+                <td><input type="checkbox" name="h" value="sp"> Sports
+                    <input type="checkbox" name="h" value="mu">Music
+                    <input type="checkbox" name="h" value="dr">Drawing
+                    <input type="checkbox" name="h" value="si">Singing
+                    <span id="errHb"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email id</td>
+                <td><input type="email" name="em">
+                    <span id="errEm"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="pwd">
+                    <span id="errPwd"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td><input type="password" name="cpwd">
+                    <span id="errcPwd"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td><select name="na">
+                        <option value="0">---Select---</option>
+                        <option value="in">India</option>
+                        <option value="ne">Nepal</option>
+                        <option value="bh">Bhutan</option>
+                        <option value="pa">Pakistan</option>
+                        <option value="us">USA</option>
+                    </select>
+                    <span id="errNa"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Address
+                </td>
+                <td>
+                    <textarea name="add" id="" cols="15" rows="4"></textarea>
+                    <span id="errAdd"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"> <input type="button" value="Register"
+                        onclick="validate()">&nbsp;&nbsp;&nbsp;<input type="reset"></td>
+            </tr>
+
+        </table>
+    </form>
+    <p id="data"></p>
+</body>
+<script>
+    function validate() {
+        let fn = document.f.fname.value
+        let ln = document.f.lname.value
+        let cn = document.f.cn.value
+        let em = document.f.em.value
+        let pwd = document.f.pwd.value
+        let cpwd = document.f.cpwd.value
+        let add = document.f.add.value
+        console.log("---->" + fn)
+        let err = ""
+        let isErr = false
+
+        let onlyText = /^[a-zA-Z]+$/
+        let onlyDigit = /^[0-9]+$/
+        let emailOnly = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/
+        // []@[].[]
+
+        if (fn == "" || fn.trim().length == 0) {
+            // alert("First name is Required")
+            isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errFn').innerHTML = "<font color='red'> * First Name is Required </font>"
+        }
+        else if (onlyText.test(fn) == false) {
+            isErr = true
+            document.getElementById('errFn').innerHTML = "<font color='red'> * Enter alphabtes only </font>"
+        }
+
+        if(ln == "" || ln.trim().length == 0){
+            // alert("Last name is Required")
+            // isErr = true
+            // err = err + "Last Name is Required.\n"
+            document.getElementById('errLn').innerHTML = " * Last Name is Required"
+        }
+
+        if(cn == "" || cn.trim().length == 0){
+            document.getElementById('errCn').innerHTML = " * Contact no is Required"
+        }
+        else if(onlyDigit.test(cn) ==  false){
+            document.getElementById('errCn').innerHTML = " * Enter digits Only"
+        }
+
+        if(em == "" || em.trim().length == 0){
+            document.getElementById('errEm').innerHTML = " * Email is Required"
+        }
+        else if(emailOnly.test(em) == false){
+            document.getElementById('errEm').innerHTML = " * Enter valid email id"
+        }
+
+        if(pwd == "" || pwd.trim().length == 0){
+            document.getElementById('errPwd').innerHTML = " * Password is Required"
+        }
+        if(cpwd == "" || cpwd.trim().length == 0){
+            document.getElementById('errcPwd').innerHTML = " * Confirm Password is Required"
+        }
+        else if(cpwd != pwd){
+            document.getElementById('errcPwd').innerHTML = " * Confirm Password and Password should match"
+        }
+
+        if(add == "" || add.trim().length == 0){
+            document.getElementById('errAdd').innerHTML = " * Address is Required"
+        }
+
+        let gen = document.f
+        let cnt = 0
+        for(let i=0;i<document.f.g.length;i++){
+            if(gen.g[i].checked){
+                cnt++
+            }
+        }
+        if(cnt == 0){
+            document.getElementById('errGen').innerHTML = " * Gender is Required"
+        }
+
+        let hby = document.f
+        let cntr = 0
+
+        for(let i = 0;i<hby.h.length;i++){
+            if(hby.h[i].checked){
+                cntr++
+            }
+        }
+
+        if(cntr == 0){
+            document.getElementById('errHb').innerHTML = "* Hobby is Required"
+        }
+
+        let na = document.f.na.value
+        console.log(na)
+        if(na == '0'){
+            document.getElementById('errNa').innerHTML = "* Nationality is Required"
+        }
+
+        // if(isErr){
+        //     alert(err)
+        // }
+
+        if (isErr == false) {
+            document.getElementById('data').innerHTML = "First Name : " + fn+"<br>Last Name : "+ln +"<br>"
+        }
+    }
+
+    function validateFn(){
+        let fn = document.f.fname.value
+        let onlyText = /^[a-zA-Z]+$/
+
+        if (fn == "" || fn.trim().length == 0) {
+            // alert("First name is Required")
+            isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errFn').innerHTML = "<font color='red'> * First Name is Required </font>"
+        }
+        else if (onlyText.test(fn) == false) {
+            isErr = true
+            document.getElementById('errFn').innerHTML = "<font color='red'> * Enter alphabtes only </font>"
+        }
+        else{
+            // isErr = true
+            document.getElementById('errFn').innerHTML = " "
+        }
+    }
+    function validateLn(){
+        let ln = document.f.lname.value
+        if(ln == "" || ln.trim().length == 0){
+            // alert("Last name is Required")
+            // isErr = true
+            // err = err + "Last Name is Required.\n"
+            document.getElementById('errLn').innerHTML = " * Last Name is Required"
+        }
+        else{
+            document.getElementById('errLn').innerHTML = ""
+        }
+    }
+    function validateCn(){
+        let cn = document.f.cn.value
+        let onlyDigit = /^[0-9]+$/
+        if(cn == "" || cn.trim().length == 0){
+            document.getElementById('errCn').innerHTML = " * Contact no is Required"
+        }
+        else if(onlyDigit.test(cn) ==  false){
+            document.getElementById('errCn').innerHTML = " * Enter digits Only"
+        }
+    }
+</script>
+
+</html>
+<!-- 
+
+    why validation ?
+    empty: required  
+    yash : fname : text : no number no spe symbol no singl word : om
+    no 
+     data  : store database : name : meet 15000000000 
+     validation 
+     co no  : digits 10 
+     pwd cpwd: same 8 32 64 ....
+
+     reg exp
+     regular expression
+
+ -->
+
+
+<!-- 
+ user name 
+ pwd 
+ cnfm pwd 
+
+ len : cno 10digit s 
+ pwd : 8 32 50
+ pin 6  -->
+
+<!-- 
+    Task 19-07-23
+    empid
+    empfname
+    emp last name
+    gender
+    contact no[10 digits]
+    city[drop down]
+    pincode[6 digits]
+    email
+    dept name [drop down]
+    working hours [per day]
+    salary [options in radio button] : 
+        per hr 
+        monthly
+        quarterly
+        per day
+    allowances [check box]
+  -->
+
+  <!-- 
+    events
+    keypress
+    kreydown
+    keyup
+
+    onblur
+    onfocus
+    
+    onchange
+    
+
+   -->

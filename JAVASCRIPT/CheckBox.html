@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+</head>
+<body bgcolor="indianred" text="white">
+    <form name="f">
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" name="c" value="r"> Red <br>
+                    <input type="checkbox" name="c" value="o"> Orange <br>
+                    <input type="checkbox" name="c" value="y"> Yellow <br>
+                    <input type="checkbox" name="c" value="b"> Blue <br>
+                    <input type="checkbox" name="c" value="P"> Purple <br>
+                    <input type="checkbox" name="c" value="T"> Teal <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Choose Color" onclick="colors()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p id="clr"></p>
+    <SCRipt>
+        function colors(){
+            let val = ''
+            let cc = document.f
+            let msg = "You Have Choosen "
+            for(let i=0;i<cc.c.length;i++){
+                if(document.f.c[i].checked){    
+                    val = document.f.c[i].value
+                    console.log(val)
+                    if(val == 'r'){
+                        msg = msg + " <font color='red'>Red</font>"
+                        document.getElementById('clr').innerHTML =  msg
+                    }
+                    if(val == 'o'){
+                        msg = msg + " <font color='orange'>Orange</font>"
+                        document.getElementById('clr').innerHTML = msg
+                    }
+                    if(val == 'y'){
+                        msg = msg + " <font color='yellow'>Yellow</font>"
+                        document.getElementById('clr').innerHTML = msg
+                    }
+
+                }
+            }
+        }
+    </SCRipt>
+</body>
+</html>
+<!-- 
+c[0] = 'r'
+c[1] = 'o' -->

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+   .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table{
+    margin: 50px;
+}
+td{
+    padding: 3px;
+}
+.btn{
+
+    padding: 20px;
+}
+p{
+    text-align: center;
+    border: 2px solid rebeccapurple;
+    width: 50%;
+    transform: translate(-50%, -50%);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            font-size: 22px;
+            color: gold;
+            background-color: rgb(166, 175, 177);
+            padding: 10px;
+}
+.data{
+    font-size: 20px;
+}
+
+</style>
+</head>
+<body>
+    <form name="f">
+        <table class="center">
+            <tr>
+                <td><label for="empid">Employee ID</label></td>
+                <td><input type="number" name="empid" id="empid">
+                <span id="errempid"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="empfname">Employee First Name</label></td>
+                <td><input type="text" name="empfname" id="empfname">
+                <span id="errfname"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="emplname">Employee Last Name</label></td>
+                <td><input type="text" name="emplname" id="emplname">
+                <span id="errlname"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="emppasswd">Employee Password</label></td>
+                <td><input type="password" name="emppasswd" id="emppasswd">
+                <span id="errpasswd"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="empcnfpasswd">Employee Confirm Password</label></td>
+                <td><input type="password" name="empcnfpasswd" id="empcnfpasswd">
+                <span id="errcnfpasswd"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="empgn">Employee Gender</label></td>
+                <td><input type="text" name="empgn" id="empgn">
+                <span id="errgn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="empcn">Employee Contact No.</label></td>
+                <td><input type="number" name="empcn" id="empcn">
+                <span id="errcn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="empcty">Employee City</label></td>
+                <td><select name="empcty" id="empcty">
+                    <option value="">Select City</option>
+                    <option value="Alipur">Alipur</option>
+                    <option value="Bawana">Bawana</option>
+                    <option value="Central Delhi">Central Delhi</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Deoli">Deoli</option>
+                    <option value="East Delhi">East Delhi</option>
+                    <option value="Karol Bagh">Karol Bagh</option>
+                    <option value="Najafgarh">Najafgarh</option>
+                    <option value="Nangloi Jat">Nangloi Jat</option>
+                    <option value="Narela">Narela</option>
+                    <option value="New Delhi">New Delhi</option>
+                    <option value="North Delhi">North Delhi</option>
+                    <option value="North East Delhi">North East Delhi</option>
+                    <option value="North West Delhi">North West Delhi</option>
+                    <option value="Pitampura">Pitampura</option>
+                    <option value="Rohini">Rohini</option>
+                    <option value="South Delhi">South Delhi</option>
+                    <option value="South West Delhi">South West Delhi</option>
+                    <option value="West Delhi">West Delhi</option>
+                </select><span id="errcty"></span></td>
+            </tr>
+            <tr>
+                <td><label for="emppin">Employee Pincode</label></td>
+                <td><input type="number" name="emppin" id="emppin">
+                <span id="errpin"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="empem">Employee Email</label></td>
+                <td><input type="email" name="empem" id="empem">
+                <span id="errem"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="empdp">Employee Department Name</label></td>
+                <td><select name="empdp" id="empdp">
+                    <option value="">Select Department Name</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Human Resources">Human Resources</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Operations management">Operations management</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Financial accounting">Financial accounting</option>
+                    <option value="Research and development">Research and development</option>
+                    <option value="Accounting">Accounting</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Corporate communication">Corporate communication</option>
+                    <option value="Quality management">Quality management</option>
+                    <option value="Business development">Business development</option>
+                    <option value="Division">Division</option>
+                    <option value="Asset management">Asset management</option>
+                </select><span id="errdp"></span></td>            
+            </tr>
+            <tr>
+                <td><label for="empwkh">Employee Working Hours</label></td>
+                <td><input type="number" name="empwkh" id="empwkh">
+                <span id="errwkh"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="empsl">Employee Salary</label></td>
+                <td>
+                    <input type="radio" name="empsl" value="emps1">Per Hours
+                    <input type="radio" name="empsl" value="emps2">Monthly
+                    <input type="radio" name="empsl" value="emps3">Quarterly
+                    <input type="radio" name="empsl" value="emps4">Per Day
+                    <span id="errsl"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="empalw">Employee Allowances</label></td>
+                <td>
+                    <input type="checkbox" name="empalw" value="empalw1">Social Security
+                    <input type="checkbox" name="empalw" value="empalw2">Health Insurance
+                    <input type="checkbox" name="empalw" value="empalw3">Achievement Award
+                    <span id="errlw"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="btn" colspan="2" align="center"><input type="button" value="Register" onclick="validate()">&nbsp;&nbsp;&nbsp;<input type="reset"></td>
+            </tr>
+        </table>
+        <p id="ValidationData"></p>
+    </form>
+</body>
+<script>
+    function validate(){
+        let EmployeeID               = document.f.empid.value
+        let EmployeeFirstName        = document.f.empfname.value
+        let EmployeeLastName         = document.f.emplname.value
+        let EmployeePassword         = document.f.emppasswd.value
+        let EmployeeConfirmPassword  = document.f.empcnfpasswd.value
+        let EmployeeGender           = document.f.empgn.value
+        let EmployeeContactNo        = document.f.empcn.value
+        let EmployeeCity             = document.f.empcty.value
+        let EmployeePincode          = document.f.emppin.value
+        let EmployeeEmail            = document.f.empem.value
+        let EmployeeDepartmentName   = document.f.empdp.value
+        let EmployeeWorkingHours     = document.f.empwkh.value
+        let EmployeeSalary           = document.f.empsl.value
+        let EmployeeAllowances       = document.f.empalw.value
+       
+        let ValidationError = false;
+       
+        let onlyText= /^[a-zA-Z]+$/ 
+        let onlyDigit = /^[0-9]+$/
+        let emailOnly = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/
+        // []@[].[]
+
+
+
+        if(EmployeeID=="" || EmployeeID.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errempid').innerHTML = "<font color='red'> * Employee ID is Required </font>"
+        }
+
+
+        if(EmployeeFirstName=="" || EmployeeFirstName.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errfname').innerHTML = "<font color='red'> * Employee First Name is Required </font>"
+        }else if(onlyText.test(EmployeeFirstName)==false){
+            document.getElementById('errfname').innerHTML = "<font color='red'> * Enter alphabtes only </font>"
+        }
+
+
+        if(EmployeeLastName=="" || EmployeeLastName.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errlname').innerHTML = "<font color='red'> * Employee Last Name is Required </font>"
+        }
+        
+        
+        if(EmployeePassword=="" || EmployeePassword.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errpasswd').innerHTML = "<font color='red'> * Employee Password is Required </font>"
+        }else if(onlyDigit.test(EmployeePassword) ==  false){
+            document.getElementById('errpasswd').innerHTML = "<font color='red'> * Enter digits Only </font>"
+        }
+        
+        
+        if(EmployeeConfirmPassword=="" || EmployeeConfirmPassword.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errcnfpasswd').innerHTML = "<font color='red'> * Employee Confirm Password is Required </font>"
+        }else if(EmployeeConfirmPassword !== EmployeePassword){
+            document.getElementById('errcnfpasswd').innerHTML = "<font color='red'> * Employee Confirm Passwords do not match </font>"
+        }
+        
+        
+        if(EmployeeGender=="" || EmployeeGender.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errgn').innerHTML = "<font color='red'> * Employee Gender is Required </font>"
+        }
+        
+        
+        if(EmployeeContactNo=="" || EmployeeContactNo.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errcn').innerHTML = "<font color='red'> * Employee ContactNo. is Required </font>"
+        }else if(EmployeeContactNo.length !== 10){
+            document.getElementById('errcn').innerHTML = "<font color='red'> * Employee ContactNo 10 Digitis is Required </font>"
+        }
+       
+       
+        if(EmployeeCity=="" || EmployeeCity.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errcty').innerHTML = "<font color='red'> * Employee City is Required </font>"
+        }
+       
+       
+        if(EmployeePincode=="" || EmployeePincode.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errpin').innerHTML = "<font color='red'> * Employee Pincode is Required </font>"
+        }else if(EmployeePincode.length !== 6){
+            document.getElementById('errpin').innerHTML = "<font color='red'> * Employee Pincode 6 Digits is Required </font>"
+        }
+       
+       
+        if(EmployeeEmail=="" || EmployeeEmail.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errem').innerHTML = "<font color='red'> * Employee Email is Required </font>"
+        }else if(emailOnly.test(EmployeeEmail) == false){
+            document.getElementById('errem').innerHTML = "<font color='red'> * Employee Email Not Valid </font>"
+
+        }
+        
+        
+        if(EmployeeDepartmentName=="" || EmployeeDepartmentName.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errdp').innerHTML = "<font color='red'> * Employee Department Name is Required </font>"
+        }
+        
+        
+        if(EmployeeWorkingHours=="" || EmployeeWorkingHours.trim().length == 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errwkh').innerHTML = "<font color='red'> * Employee Working Hours is Required </font>"
+        }
+        
+        let salry = document.f
+        let EmpS = 0
+
+        for(let i=0;i<document.f.empsl.length;i++){
+            if(salry.empsl[i].checked){
+                EmpS++
+            }
+        }
+
+
+        if(EmpS== 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errsl').innerHTML = "<font color='red'> * Employee Salary is Required </font>"
+        }
+        
+        let alw = document.f
+        let EmpA = 0
+        
+        for(let i=0;i<document.f.empalw.length;i++){
+            if(alw.empalw[i].checked){
+                EmpA++
+            }
+        }
+        
+        
+        if(EmpA== 0){
+            // alert("First name is Required")
+            // isErr = true
+
+            // err = err + "First Name is Required.\n"
+            document.getElementById('errlw').innerHTML = "<font color='red'> * Employee Allowances is Required </font>"
+        }
+
+        if(ValidationError == false){
+            document.getElementById('ValidationData').innerHTML = "<table class='data'><tr><td><font color='blue'> EmployeeID: "+EmployeeID+ " <br>EmployeeFirstName: " +EmployeeFirstName+ "<br>EmployeeLastName: " +EmployeeLastName+ "<br>EmployeePassword: " +EmployeePassword+ "<br>EmployeeConfirmPassword: " +EmployeeConfirmPassword+ "<br>EmployeeGender: " +EmployeeGender+ "<br>EmployeeContactNo: " +EmployeeContactNo+ "<br>EmployeeCity: " +EmployeeCity+ "<br>EmployeePincode: " +EmployeePincode+ "<br>EmployeeEmail: " +EmployeeEmail+ "<br>EmployeeDepartmentName: " +EmployeeDepartmentName+ "<br>EmployeeWorkingHours: " +EmployeeWorkingHours+ "<br>EmployeeSalary: " +EmployeeSalary+ "<br>EmployeeAllowances: " +EmployeeAllowances+"</td></tr></table></font>"
+        }
+    }
+    
+</script>
+
+
+</html>

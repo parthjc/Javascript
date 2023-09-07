@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Addition</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>Enter value for a</td>
+                <td><input type="text" name="n1"></td>
+            </tr>
+            <tr>
+                <td>Enter value for b</td>
+                <td><input type="text" name="n2"></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2"><input type="button" value="Addtion" onclick="add()"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+    function add(){
+        // c = a + b
+        let a = parseInt(document.f.n1.value)
+        let b = parseInt(document.f.n2.value)
+        // document : Object
+        // f : form name
+        // n1 : text box name
+        // value : keyword
+        console.log(a)
+        console.log(b)
+        // to print on console
+
+        let c = a + b
+        document.write("Addition : "+c)
+
+    }
+</script>
+</html>

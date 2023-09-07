@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form name="f">
+        <table>
+            <tr>
+                <td>enter value for a</td>
+            <td><input type="text" name="a"></td>
+        </tr>
+            <tr>
+                <td>enter value for b</td>
+                <td><input type="text" name="b"></td>
+            </tr>
+
+            <tr align="center">
+                <td colspan="2"><input type="button" value="Addition" onclick="add()"></td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</body>
+</html>
+
+<script>
+
+    function add(){
+
+        let a = parseInt(document.f.a.value)
+        let b = parseInt(document.f.b.value)
+
+        console.log(a)
+        console.log(b)
+
+        let c = a + b
+
+        console.log(c)
+        document.write("Addition - " +c)
+
+    }
+
+</script>

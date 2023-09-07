@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="myForm">
+        <table>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td>
+                    <input type="text" id="name" name="name" required> 
+                </td>
+            </tr>
+           
+          <tr>
+            <td><label for="email">Email:</label></td>
+            <td>
+                <input type="email" id="email" name="email" required>
+            </td>
+          </tr>
+          
+          <tr>
+            <td><label for="password">Password:</label></td>
+            <td>
+                <input type="password" id="password" name="password" required>
+            </td>
+          </tr>
+           
+          <tr>
+            <td><input type="button" value="Submit" onclick="validation()"></td>
+          </tr>
+        </table>
+       
+      </form>
+      
+
+
+</body>
+
+
+<script>
+
+      function validation(){
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+  
+      // Regular expression to validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+      // Perform validation
+      if (name.trim() === "") {
+        alert("Please enter your name.");
+        return;
+      }
+  
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+  
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+      }
+  
+      // If all validations pass, you can submit the form here
+      // For example, you can call a function to send the form data to the server
+      // submitForm(name, email, password);
+    }
+  
+      
+    
+  </script>
+  
+
+</html>

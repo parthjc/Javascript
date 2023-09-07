@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>Enter val of a</td>
+                <td><input type="text" name="a"></td>
+            </tr>
+            <tr>
+                <td>Enter val of b</td>
+                <td><input type="text" name="b"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" ><input type="button" value="Addition" onclick="add()"></td>
+            </tr>
+        </table>
+    </form>
+    <p id="add">--------</p>
+</body>
+<script>
+    // let tmp = 0
+    // let sum = 0 
+    // for (let i = 0; i < 5; i++) {
+    //     console.log(i)
+    //     // document.getElementById('add').innerHTML = i
+    //     tmp = tmp + i +"<br>"
+    //     sum = sum + i
+    // }
+    // document.getElementById('add').innerHTML = tmp + "<br>Sum  : "+ sum
+
+
+
+
+
+    function add() {
+        let n1 = parseInt(document.f.a.value)
+        let n2 = parseInt(document.f.b.value)
+        console.log("n1 : " + n1)
+        console.log("n2 : " + n2)
+        let ans = n1 + n2
+        let sub = n1 - n2
+        // document.write("Addition : "+ans)
+        // let x = document.getElementById('add')        
+        // x.innerHTML = ans
+
+
+        document.getElementById('add').innerHTML = "<font size='5' color='teal'><i>Addition :</i> </font>"+ans + "<br><b>Subtraction : </b>"+ sub
+
+    }
+</script>
+
+</html>

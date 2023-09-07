@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down</title>
+</head>
+<body>
+    <form name="f">
+        <tr>
+            <td>Nationality</td>
+            <td>
+                <select name="na" id="">
+                    <option value="0">---- Select ----</option>
+                    <option value="i">India</option>
+                    <option value="u">USA</option>
+                    <option value="uk">Uk</option>
+                    <option value="n">Nepal</option>
+                    <option value="ua">UAE</option>
+                    <option value="c">Canada</option>
+                    <option value="ch">China</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Nationality" onclick="vals()">
+            </td>
+        </tr>
+    </form>
+    <p id="na"> </p>
+</body>
+<script>
+    function vals(){
+        let val = document.f.na.value
+        console.log(val)
+        if(val == '0'){
+            document.getElementById('na').innerHTML = "U have Choosen Nothing..."
+        }
+        if(val=='i'){
+            document.getElementById('na').innerHTML = "India is Superpower Now."
+        }
+        if(val=='u'){
+            document.getElementById('na').innerHTML = "USA Banned MOdiji Once upon a time"
+        }
+        if(val=='uk'){
+            document.getElementById('na').innerHTML = "Nice PLace to visit"
+        }
+        if(val=='n'){
+            document.getElementById('na').innerHTML = "Nepal is our neighbour Country"
+        }
+    }
+</script>
+</html>
+
+<!-- 
+    task :
+    arithmetic operation
+
+ -->

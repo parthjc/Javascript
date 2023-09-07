@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let str = 'wheAls on the bus go round '
+    // 01234
+    document.write(typeof str)
+    document.write("<br>---> " + str[2])
+    document.write("<br> :  " + str)
+    document.write("<br> length : " + str.length)
+    document.write("<br> Index of char : " + str.charAt(3))
+    // character on this index number 
+    // document.write("<br>UNicode caharacter  --" + str.charCodeAt(3))
+
+    // document.write("<br> Index of character : " + str.indexOf('o'))
+    // document.write("<br> Index of character : " + str.indexOf('bus'))
+    // document.write("<br> Index of Character : " + str.indexOf(' onn '))
+    // if match not found it will retun -1
+
+    // document.write("<br> <br>Slice :" + str.slice(2, 17))
+    // range on index 2 to 16
+    // document.write("<br> Slice : " + str.slice(5))
+    // document.write("<br> Slice : " + str.slice(-5))
+
+    // document.write("<br> Substring : " + str.substring(2, 17))
+    // document.write("<br> Substring : " + str.substring(7))
+    // document.write("<br> Substring : "+str.substring(-7))
+
+    document.write("<br> Uppercase : " + str.toUpperCase())
+    strupp = str.toUpperCase()
+    document.write("<br> " + strupp)
+    document.write("<br> Lowercase :  " + str.toLowerCase())
+
+    let str1 = "  Royal tech soft   " //100000000000 
+    document.write("<br><br>str len : " + str1.length)
+    document.write("<br>After Trim : len of String : " + str1.trim().length)
+
+    let str2 = '12345'
+    document.write("<br><br>PadStart : " + str2.padStart(10, '#'))
+    document.write("<br><br>PadEnd : " + str2.padEnd(10, '#'))
+
+    let str3 = "Rain rain go away"
+    document.write("<br>Starts with : " + str3.startsWith('r')) // false ... case sensitive
+    document.write("<br>Starts with : " + str3.startsWith('R')) // true
+    document.write("<br>Starts with : " + str3.startsWith('Rain'))
+    document.write("<br>Starts with : " + str3.startsWith('Rainn'))
+
+    document.write("<br>Ends with : " + str3.endsWith('y'))//true
+    document.write("<br>Ends with : " + str3.endsWith('Y'))// false ... case sensitive
+    document.write("<br>Ends with : " + str3.endsWith('o away'))
+
+    // cancatrnation
+    let str4 = "jonny jonny yes papa"
+    let str5 = str4.concat(str3)
+    document.write("<br><br> Concate : "+str4.concat(str3))
+    document.write("<br><br> Concate : "+str5)
+    str5 = str4.concat(str,str1,str3,str4,str2)
+    document.write("<br><br> Concate : "+str5)
+
+</script>
+
+</html>
+<!-- 
+    task : 24-05-23
+    take sting from user :
+    1. take two string from user and find max of it
+    2. ask user for a string to check its existance
+    3. ask for index number to the user and get charater on it 
+ -->
+ <!-- 
+    task : 31-05-23
+    1. string : weather is it uppercase or not? possible?
+    2. take a long string : count len of string and count unwanted spaces
+    3. taka a string and apply padding of '#' of length 20
+    4. take four strings from user and concate with each other with three different combination
+    5. take a string and check weather is it terminate with a e i o u
+  -->

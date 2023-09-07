@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio button</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>Choose your shift</td>
+            </tr>
+            <tr>
+                <td>
+                <input type="radio" name="s" value="s1"> Morning 6am to 2pm <br>
+                <input type="radio" name="s" value="s2"> Morning 10 am to 6pm  <br>
+                <input type="radio" name="s" value="s3"> Noon 2pm to 10 pm <br>
+                <input type="radio" name="s" value="s4"> Night 10 pm to 6am</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Submit" onclick="shift()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p id="msg"></p>
+    <script>
+
+        function shift(){
+            let sh = document.f.s.value
+            console.log(sh)
+
+            if(sh == 's1'){
+                // document.write("Your shift will be Morning 6am to 2pm")
+                document.getElementById('msg').innerHTML = "<font size='5'>Your Shift will be <font color='indianred'>6am to 2pm</font></font>"
+            }
+            if(sh == 's2'){
+                // document.write("Your shift will be Morning 6am to 2pm")
+                document.getElementById('msg').innerHTML = "<font size='5'>Your Shift will be <font color='indianred'><b>10 am to 6 pm</b></font></font>"
+            }
+            if(sh == 's3'){
+                // document.write("Your shift will be Morning 6am to 2pm")
+                document.getElementById('msg').innerHTML = "<font size='5'>Your Shift will be <font color='indianred'><b>2 pm  to 10 pm</b></font></font>"
+            }
+            if(sh == 's4'){
+                // document.write("Your shift will be Morning 6am to 2pm")
+                document.getElementById('msg').innerHTML = "<font size='5'>Your Shift will be <font color='indianred'><b>10 pm to 6 am</b></font></font>"
+            }
+        }
+
+    </script>
+</body>
+</html>

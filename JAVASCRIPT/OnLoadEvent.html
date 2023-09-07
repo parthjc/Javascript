@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on load</title>
+</head>
+<body onload="colr()">
+    
+    
+</body>
+<script>
+    function colr(){
+        document.body.bgColor = 'teal'
+        console.log("teal")
+        setTimeout(gold,2000)
+        // 2000 millisec =  2 sec
+        // gold()
+    }
+    function gold(){
+        document.body.bgColor = 'gold'
+        console.log('gold')
+        setTimeout(aqua,2000)
+    }
+    function aqua(){
+        document.body.bgColor = 'aqua'
+        console.log('aqua')
+        setTimeout(colr,2000)
+    }
+
+
+
+</script>
+</html>

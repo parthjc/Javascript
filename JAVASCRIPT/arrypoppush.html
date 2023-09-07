@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <form name="f">
+
+    <table>
+      <tr>
+        <td>enter value</td>
+        <td><input type="text" name="txt"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="pushArr" onclick="pushfun()"></td>
+        <td><input type="button" value="popArr" onclick="popfun()"></td>
+      </tr>
+    </table>
+  </form>
+  <p id="p"></p>
+
+
+
+</body>
+
+  <script>
+
+    let arr = []
+
+    function pushfun(){
+
+      let val = document.f.txt.value
+
+      arr.push(val)
+      printarr()
+
+    }
+
+    function printarr(){
+
+      document.getElementById('p').innerHTML = arr
+
+    }
+
+    function popfun(){
+
+      let val2 = document.f.txt.value
+
+      arr.pop()
+      printarr()
+      
+
+    }
+
+  </script>
+
+</html>
