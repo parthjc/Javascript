@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock js</title>
+</head>
+<body>
+    <p id="clock"></p>
+     <button onclick="clearInterval(clock)">Clear Interval</button>
+</body>
+<script>
+    let clock = setInterval(clockRun,1000)
+    function clockRun(){
+        let d = new Date()
+        let time = d.toLocaleTimeString()
+        console.log(time)
+        document.getElementById('clock').innerHTML = time
+        
+
+    }
+
+</script>
+</html>

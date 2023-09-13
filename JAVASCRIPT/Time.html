@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var d = new Date()
+    var t = d.getTime();
+    document.write("Time : "+t)
+    // 1970 miliseconds
+
+    let hr = d.getHours()
+    // let hr = d.getUTCHours()
+    document.write("<br>Hours : "+hr)
+
+    let min = d.getMinutes()
+    document.write("<br>Minutes : "+min)
+
+    let sec= d.getSeconds()
+    document.write("<br>Seconds : "+sec)
+
+    let localDateString = d.toLocaleDateString()
+    document.write("<br>LocalDateString : "+localDateString)
+    // mm - dd - yy
+
+    let localString = d.toLocaleString()
+    document.write("<br>Local String : "+localString)
+
+    let localtimeString = d.toLocaleTimeString()
+    document.write("<br>LOcalTimeString : "+localtimeString)
+
+</script>
+</html>
