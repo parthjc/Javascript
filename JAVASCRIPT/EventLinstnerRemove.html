@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RemoveEventListener</title>
+</head>
+<style>
+    #myDiv {
+        background-color: indianred;
+        padding: 30px;
+        line-height: 40px;
+        color: wheat;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <div id="myDiv">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, neque rem! Temporibus saepe
+            architecto
+            error minima vero similique quam fugiat numquam. Modi odio perspiciatis laboriosam ea quos accusantium, enim
+            odit!
+            lotre Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur delectus nulla consectetur quia
+            nam
+            suscipit voluptatum facere quae?
+        </p>
+        <button onclick="removeListener()">Remove</button>
+    </div>
+    <p id="demo"></p>
+</body>
+<script>
+    document.getElementById('myDiv').addEventListener("mousemove", myFun)
+
+    function myFun() {
+        document.getElementById('demo').innerHTML = Math.random();
+        // console.log(Math.random())
+    }
+
+    function removeListener(){
+        document.getElementById('myDiv').removeEventListener("mousemove",myFun)
+        console.log("Remove Event Listner")
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onkeyup="keyCodePress(event)">
+    
+    <p>ASCII code of any key</p>
+    <p id="p1"></p>
+</body>
+<script>
+    function keyCodePress(event){
+        document.getElementById('p1').innerHTML = event.keyCode
+        console.log(event.keyCode)
+    }
+</script>
+</html>
