@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p id="val"></p>
+    <script>
+        let info = {
+            name :"Shyam",
+            lname : "Patel",
+            contatct : "998877",
+            email : "sp@gmail.com",
+            location : "Gujarat"
+        };
+        delete info.location;
+        let prnt = " "  
+        for(let x in info){
+            // prnt = prnt + (info[x]+ " " );
+            prnt += info[x] + "<br> "
+        }
+        // for(let y in info){
+        //     prnt += info[y] + "<br>"
+        // }
+        document.getElementById('val').innerHTML = prnt
+    </script>
+</body>
+</html>

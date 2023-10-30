@@ -1,0 +1,76 @@
+<html lang="en">
+
+    <head>
+        <style>
+            body{
+                font-size: 30px;
+            }
+        </style>
+
+    </head>
+
+<body>
+    <h2> Map Object </h2>
+    <p>Map.set():-> </p>
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+
+    <script>
+        // Create a Map
+        // 11 : raj 
+        const colors= new Map();
+
+        // Set Map Values
+        // key : value
+        colors.set("White", 444);
+        colors.set("Black", 222);
+        colors.set("Cyan", 666);
+        colors.set(667,"Purple");
+
+
+       
+        // document.getElementById("p1").innerHTML = colors.get(667);
+        // colors.get(key)
+        document.getElementById("p1").innerHTML = colors.get("White");
+
+        // ---------------
+        // LET VAR CONST
+        const assets = new Map([
+            ["House", 5000000],
+            ["Car", 300000],
+            ["Land", 200000]
+        ]);
+
+        assets.set("Restro", 600000);
+
+        // document.getElementById("p1").innerHTML = assets.get("Car");
+        // document.getElementById("p2").innerHTML =  assets.size +" "+"elements"
+
+        // document.getElementById("p1").innerHTML = assets.has('Lansds')
+        document.getElementById("p1").innerHTML = assets.has('Land')
+        // exits or not : true / false
+
+        // delete
+        // assets.delete('Car')
+        // document.getElementById("p1").innerHTML = "Car exist? : "+assets.has('Car')
+
+        // display all values using for each
+
+        // let val = "";
+        // assets.forEach(function (value, key) {
+        //     val += key + ' = ' + value + "<br>"
+        // })
+        // document.getElementById("p1").innerHTML = val;
+
+        // Display all values using entries() function
+        let val = "";
+        for (let x of assets.entries()) {
+            val += x + "<br>";
+        }
+        document.getElementById("p1").innerHTML = val;
+    </script>
+
+</body>
+
+</html>

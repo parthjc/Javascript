@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <title>Object new Property add</title>
+</head>
+
+<body>
+    <p id="val"></p>
+    <script>
+        let info = {
+            name: "Shyam",
+            lname: "Patel",
+            contatct: "998877",
+            email: "sp@gmail.com"
+        };
+
+        info.location = "Ahemdabad"
+        info.pincode = 380015
+
+        let prnt = " "
+        for (let x in info) {
+            console.log(x + "--> "+ info[x])
+            // prnt = prnt + (info[x]+ " " );
+            prnt += x+" :  "+info[x] + "<br> "
+        }
+
+        document.getElementById('val').innerHTML = prnt
+    </script>
+</body>
+
+</html>

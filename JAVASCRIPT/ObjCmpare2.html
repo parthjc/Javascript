@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript Numbers</h2>
+    <p>In JavaScript --: objects cannot be compared:</p>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+        // x is an object
+        // let x = new Number(999);
+        x = 222
+        // y = 222
+        y = "222"
+        // y is an object
+        // let y = new Number(999);
+
+        document.getElementById("p1").innerHTML ="Compare with == : "+ (x == y);
+        document.getElementById("p2").innerHTML = "Compare with === : "+(x === y);
+    </script>
+</body>
+</html>

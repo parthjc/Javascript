@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Window Property</title>
+</head>
+<h2>The name Property</h2>
+
+<p id="p1"></p>
+<a href="https://www.amazon.in/" target="newWindow">This will will open in a new tab. [Amazon.co.in]</a>
+<br>
+<a href="AuthUser.html" target="newWindow">This will will open in a new tab.[Local file]</a>
+
+
+<script>
+    window.name = "My Window";
+    document.getElementById("p1").innerHTML = "My Window Name is : " + window.name;
+
+    const otherWindow = window.open();
+    otherWindow.name = "newWindow";
+
+</script>
+
+</html>

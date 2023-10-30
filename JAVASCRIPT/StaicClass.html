@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                font-size: 30px;
+            }
+        </style>
+
+    </head>
+<body>
+
+<h2>Class and Static Methods</h2>
+
+<p>A static method can be created with the "static" keyword and can call only on the class itself.</p>
+
+<p id="p1"></p>
+<p id="p2"></p>
+
+<script>
+class Car {
+  constructor(n) {
+    this.name = n;
+  }
+  static hello() {
+    return "Royal Tech Soft..!!";
+  } 
+  carName(){
+      return this.name
+  }
+}
+
+let myCar = new Car("KIA");
+let myCar2 = new Car("Ferari");
+// obj.func()
+
+
+document.getElementById('p1').innerHTML = "I have purchased a new model of "+myCar.carName()
+
+
+//You can call 'hello()' on the Car Class:
+document.getElementById("p2").innerHTML = Car.hello() + "(static Method Called)";;
+
+// cnt call on  a Car Objecthello
+// document.getElementById("p1").innerHTML = myCar.hello();
+// this will raise an error.
+// document.getElementById("p1").innerHTML = Car.(myCar) + "(static Method Caled)";
+</script>
+
+</body>
+</html>

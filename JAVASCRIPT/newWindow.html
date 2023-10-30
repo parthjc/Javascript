@@ -1,0 +1,41 @@
+<html><head><title>New Window</title></head>
+<body>
+    <button onclick="newWindow()">Open new Window</button>
+    <button onclick="closeWindow()">Close new Window</button>
+    <!-- <button onclick="whereAmI()">LocateMe</button> -->
+    <script>
+        var myWindow = "";
+        function newWindow(){
+
+            myWindow = window.open("validation.html","myWindow","width=500,height=500")
+            console.log(typeof myWindow)
+
+            // window.open(" ","","size")
+
+       }
+        function closeWindow(){
+            console.log("Window Close")
+            myWindow.close();
+            
+        }
+
+    //     function whereAmI(){    
+    //     navigator.geolocation.getCurrentPosition(function(data){
+    //         console.log(data);
+    //         console.log(data.coords.latitude);
+    //         console.log(data.coords.longitude);
+    //     })
+    // }
+    </script>
+</body>
+</html>
+
+<!-- Dom : document -->
+<!-- BOM
+    Browser object Model
+    Window 
+    menu
+    size
+    open close
+
+-->

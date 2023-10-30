@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!-- no duplicates in set  -->
+    <h2> Sets</h2>
+    <p> Set from an Array:</p>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+        // Create a Set
+        const colors = new Set(["White","Black","Cyan"]);
+        // const colors = new Set();
+        // adding values to set
+        colors.add('Purple')
+        colors.add('Brown')
+        // colors.add('') // allowed
+        colors.add('Pink')
+        colors.add('pink')
+        colors.add('Pink')
+        colors.add('Pink')
+        
+        // no repeate values allowed so it will store only first one 
+        // Display set.size
+        document.getElementById("p1").innerHTML = colors.size;
+        let val = "";
+
+        colors.forEach(function (value) {
+            val += value + "<br>";
+        })
+        document.getElementById('p2').innerHTML = val
+        
+        // let vals = ""
+        // for(let n of colors.values()){
+        //       vals += n+"<br>"
+        // }
+        // document.getElementById('p2').innerHTML = vals
+    </script>
+</body>
+
+</html>

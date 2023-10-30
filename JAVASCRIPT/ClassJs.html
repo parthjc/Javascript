@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <style>
+        body {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Class Constructor and Method</h2>
+    <p id="p1"></p>
+    <script>
+        class Car {
+            constructor(name, y) {
+                this.name = name;
+                this.year = y;
+            }
+            carAge() {
+                let date = new Date();
+                console.log(this.year +"-"+date.getFullYear())
+                return date.getFullYear() - this.year;
+                // 2022 - 2013
+                
+            }
+
+        }
+
+        let myCar = new Car("Ferrari", 2012);
+        console.log(typeof myCar)
+        // create an object 
+        document.getElementById("p1").innerHTML = "My car is " + myCar.carAge() + " years old.";
+    </script>
+
+</body>
+
+</html>
